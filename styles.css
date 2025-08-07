@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    /* Set the font for the body */
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    background-color: #f4f4f4;
+    /* Light gray background color */
+}
+
+main {
+    display: flex;
+    /* Use flexbox for layout */
+    flex-direction: column;
+    justify-content: space-between;
+    /* Space items evenly */
+    height: 100%;
+    padding: 20px;
+    /* Padding around main content */
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+    background: white;
+    /* White background for product section */
+    border: 5px solid #0eec07;
+    /* Light gray border */
+    border-radius: 20px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Padding inside product section */
+    text-align: center;
+    /* Center align text */
+    width: 30%;
+    /* Set width of product section */
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    background-clip: padding-box;
+}
+
+.product::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #0eec07, #6adb77, #25a244);
+}
+
+
+/*makes the hover effect when the pointer is on the product box*/
+
+.product:hover {
+    transform: scale(0.95);
+    box-shadow: 0 12px 25px rgba(35, 197, 94, 0.3);
+}
+
+.product img {
+    width: 100%;
+    /* Responsive image */
+    height: 200px;
+    /* Maintain aspect ratio */
+    object-fit: contain;
+}
+
+.product-details {
+    flex-grow: 1;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px
+}
+
+.buy-button {
+    background-color: #4CAF50;
+    /* Green background for button */
+    color: white;
+    /* White text color */
+    border: none;
+    /* Remove border */
+    padding: 10px 20px;
+    /* Padding inside button */
+    cursor: pointer;
+    /* Change cursor to pointer */
+    border-radius: 5px;
+    /* Rounded corners for button */
+    margin-top: auto;
+}
+
+.buy-button:hover {
+    background-color: #45a049;
+    /* Darker green on hover */
+}
+
+@media(max-width: 768px) {
+    .product {
+        width: 45%;
+    }
+}
+
+@media(max-width: 480px) {
+    .product {
+        width: 100%;
+    }
+}
